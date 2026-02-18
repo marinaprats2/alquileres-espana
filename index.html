@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoryMap Interactivo | Plantilla uMap</title>
+  <link rel="icon" type="image/png" href="https://umap.openstreetmap.fr/static/img/favicon.png">
+  <style>
+    /* ----------- ESTILOS BASE ----------- */
+    :root {
+      --bg-color: #f8f8f8;
+      --text-color: #222;
+      --accent-color: #6090c1;
+      --chapter-bg: #ffffffcc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, var(--accent-color), #0099ff);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ----------- CAPÍTULOS ----------- */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chapter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: var(--chapter-bg);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .chapter:hover {
+      transform: scale(1.01);
+    }
+
+    .chapter img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    .chapter h2 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .chapter p {
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      background-color: #fafafa;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    /* ----------- RESPONSIVE ----------- */
+    @media (max-width: 700px) {
+      header h1 { font-size: 1.8rem; }
+      .chapter { margin: 2rem 1rem; padding: 1.5rem; }
+      .map-frame { height: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>El drama del alquiler en España</h1>
+    <p>Una narrativa visual con mapas interactivos creados en uMap en el que se exploran los precios medios del metro cuadrado en alquiler en España, su evolución y el estudio de problemáticas de tres casos concretos: Madrid, Barcelona y Málaga. Desplázate para descubrir cada capítulo.</p>
+  </header>
+
+  <main>
+
+    <!-- 🔹 CAPÍTULO 1 -->
+    <section class="chapter">
+      <h2>Capítulo 1 — Una subida del 33% entre 2013 y 2023</h2>
+      <img src="https://fotografias.lasexta.com/clipping/cmsimages02/2024/10/13/F2CED226-A16F-44E1-BAE3-B80DD4DF61B7/manifestacion-vivienda-madrid_96.jpg?crop=1920,1080,x0,y49&width=1200&height=675&optimize=low&format=webply" alt="Imagen descriptiva del capítulo 1">
+      <p>La subida de los precios de alquiler se ha visto especialmente en estos 10 años, con la pandemia de la covid-19 como punto de inflexión en 2020, con incremento de un 33% en esta década, especialmente en 2023, de donde se tienen los últimos datos del Ministerio de Vivienda y Agenda Urbana. Allí se recoge que las mayores subidas anuales en 2023 se registraron en Baleares (19,4%), Comunitat Valenciana (14,6%), Canarias (13,6%) y Madrid (12,7%). Las causas son multifactoriales y van desde el aumento de los alquileres turísticos, que ya han sido regulados en localidades como Barcelona o Málaga tiene como consecuencia la dispersión hacia localidades o barrios de la periferia, el incremento de precios en las zonas céntricas.</p>
+  
+<p>En primer lugar, en este mapa puedes ver el <b>precio medio del alquiler del metro cuadrado en vivienda colectiva en 2013</b>, por provincias, según el Sistema Estatal de Referencia del Precio del Alquiler de Vivienda (SERPAVI) del Ministerio de Vivienda y Agenda Urbana. El máximo se situaba entonces en <b>Madrid con 8,7 euros/m²</b>. Tal y como puedes comprobar clicando sobre cada provincia, ninguna superaba los 10 euros/m².
+</p>
+
+ <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/es/map/mapa-de-precios-de-alquiler_1356029?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=1700d068-3041-42d3-ad42-f7673d7c212d#6/40.313043/-4.020996"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    
+
+<p>En este segundo mapa puedes observar, por provincias, el <b>precio medio del alquiler del metro cuadrado en vivienda colectiva en 2023</b>, según el mismo indicador y un crecimiento sustancial de estos. El máximo se sitúa en <b>Madrid con 11,5 euros/m²</b>, seguida de <b>Barcelona con 10,6 euros/m²</b>, Guipúzcoa con 10,2 euros/m², Álava con 9,6 euros/m², Ceuta con 9,2 euros/m², Islas Baleares con 9,1 euros/m², Melilla con 8,8 euros/m² y <b>Málaga con 8,4 euros/m²</b>.
+</p>
+
+
+  <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/es/map/mapa-de-precios-de-alquiler_1356029?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=ea74eb09-1ba0-40dc-9b91-b787c47bd756#6/40.313043/-4.020996"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- 🔹 CAPÍTULO 2 -->
+    <section class="chapter">
+      <h2>Capítulo 2 — Málaga, las consecuencias de la expulsión de la población de la capital</h2>
+      
+      <p>El 30 de mayo de 2024, los malagueños salieron a la calle para reclamar una vivienda digna, en una ciudad con cada vez más apartamentos turísticos y que está obligando a que la población salga de la capital a localidades cercanas como Alhaurín de la Torre, Cártama, el Rincón de la Victoria o Torremolinos. </p>
+
+<p>
+Además del aumento de población ha hecho que incremente también el precio medio del alquiler. Tal y como se puede consultar en la infografía a continuación:</p>
+
+<iframe src='https://flo.uri.sh/visualisation/27561089/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+<p>
+Puedes consultar la casuística de cada una de estas localidades en <b></b>cada ruta del mapa.</b></p>
+      <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/es/map/mapa-de-precios-de-alquiler_1356029?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=45c951ac-a6c5-48b9-a412-47c9a697063d#11/36.782892/-4.347839"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- 🔹 CAPÍTULO 3 -->
+    <section class="chapter">
+      <h2>Capítulo 3 — Madrid, la diferencia entre distritos</h2>
+    
+      <p>El precio de la vivienda también es una cuestión de zonas. En Madrid, la sintomatología es muy clara con la barrera, cada vez menos visible, de la <b>M-30</b>. La circunvalación de la ciudad marca lo que se denomina comúnmente como “almendra central” y que marca una diferencia tan significativa como se puede ver en el mapa (haciendo click en cada burbuja), con datos como los 16,73 euros/m² de distritos como Arganzuela y los 13,56 euros/m² de Usera, cuando ambos se encuentran únicamente separados por el Manzanares y la M-30, o l<b>os 17,80 euros/m² de Retiro frente a los 13,63 euros/m² de Vallecas.</b></p>
+
+      <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/es/map/mapa-de-precios-de-alquiler_1356029?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=aaf77fa0-5b27-48cd-b082-269b72c86c7f#12/40.408006/-3.679047"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+
+       <p>De ahí también el choque entre el esfuerzo económico que supone para los habitantes de distintos barrios este incremento del alquiler, especialmente en el centro, pero también en distritos con menor renta per cápita como Vallecas o Usera. En la siguiente gráfica puedes ver cuáles superan el 30% destinado al alquiler recomendado por el Ministerio de Vivienda y Agenda Urbana.</p>
+
+
+<iframe src='https://flo.uri.sh/visualisation/27683842/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+
+    </section>
+
+    <!-- 🔹 CAPÍTULO 4 -->
+    <section class="chapter">
+      <h2>Capítulo 4 — Barcelona y la densidad de alquileres turísticos</h2>
+    
+      <p>Barcelona fue una de las primeras capitales con importantes problemas de vivienda y de alquiler. Pero también fue una de las primeras en regularlo. Los alquileres turísticos copaban (y siguen teniendo un peso importante en los inmuebles de la ciudad). En enero de 2017 se aprobó el <b>Plan Especial Urbanístico de Alojamientos Turísticos (PEUAT)</b>, por el cual se limitaban los alojamientos turísticos en zonas del centro <b>(la zona delimitada en azul en el mapa)</b>, ya fuera vivienda de uso turístico, hoteles, hostales y pensiones.</p>
+
+<p>En el siguiente mapa puedes ver, clicando en cada cuadrado, la densidad de Viviendas de Uso Turístico por manzanas en 2023. En él, se pueden ver zonas que que <b>superan las 300 y se acercan a las 400 en algunas cercanas a la Diagonal y El Eixample</b>. Sin embargo, desde la entrada en vigor del PEUAT, en zonas como la Ciutat Vella la densidad es mucho menor.
+ </p>
+
+      <iframe class="map-frame"
+        src="https://umap.openstreetmap.fr/es/map/mapa-de-precios-de-alquiler_1356029?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=004a8d91-9021-497d-9952-6bb2e83e9123%2Cf2f75039-8f41-43a0-91c1-961ea303ca84#14/41.387885/2.166367"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+<p>No obstante, tal y como se puede comprobar en la siguiente gráfica, esta medida no ha sido suficiente para evitar la subida drástica de los alquileres, que superan los 1.100 euros de media en Barcelona capital.
+ </p>
+      <iframe src='https://flo.uri.sh/visualisation/27699764/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+    </section>
+
+    <!-- 🔹 CAPÍTULO 5 -->
+    <section class="chapter">
+      <h2>Capítulo 5 — ¿Hay soluciones posibles en el horizonte?</h2>
+      <img src="https://img.freepik.com/foto-gratis/sector-inmobiliario_23-2151925468.jpg" alt="Imagen descriptiva de la ley de vivienda">
+      <p>En 2023 se aprobó <b>la Ley de Vivienda aprobada en 2023</b>, sin embargo, cuenta con inconvenientes como la aprobación autonómica en el caso de determinar las zonas tensionadas con limitación de precio o que tiene sus principales ayudas a propietarios como Incentivos de hasta el 90% en el IRPF si se reduce el alquiler un 5% en zonas tensionadas, o hasta el 70% si se alquila a jóvenes.</p>
+
+<p><b>Esto no ha provocado una bajada en los precios del alquiler en España</b> y mucho menos en zonas tensionadas como las ciudades analizadas: Barcelona, Madrid y Málaga. Por lo que, todavía queda un abanico de posibles soluciones para tratar de paliar un problema interterritorial e intergeneracional, que va desde aplicar la limitación de precios en zonas tensionadas a nivel estatal, regular el alquiler de habitaciones y el alquiler de temporada, limitar la adquisición de viviendas por fondos de inversión e inversores extranjeros y aumentos de cargas fiscales a los grandes tenedores, es decir, aquellos con más de 10 inmuebles.
+</p>
+
+     
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Creado con <a href="https://umap.openstreetmap.fr/es/" target="_blank">uMap</a> y HTML5 · Plantilla adaptable por <strong>María Ariza</strong> · © 2025</p>
+  </footer>
+
+</body>
+</html>
